@@ -1,25 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { VRCanvas, Hands, DefaultXRControllers } from '@react-three/xr';
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <VRCanvas>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <DefaultXRControllers />
+      <Hands />
+    </VRCanvas>
   );
 }
 
